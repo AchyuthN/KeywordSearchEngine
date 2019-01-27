@@ -19,7 +19,7 @@ class WikiRetrieve(object):
 
     def url_retrieve(self, url_input):
         ''' Takes the URL input as the argument and returns a soup object of the webpage to be scraped. '''
-        web = requests.request('GET', WikiRetrieve.urlInput(self, url_input))
+        web = requests.request('GET', url_input)
         content = web.content
         soup = BeautifulSoup(content, 'lxml')
         return soup
